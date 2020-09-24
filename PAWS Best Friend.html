@@ -1,0 +1,205 @@
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/paws-logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="Paws Data Pipeline" content="Web site for PAWS Data Lake and 360 View">
+  <link rel="apple-touch-icon" href="/paws-logo.png">
+  <!--
+    manifest.json provides metadata used when your web app is installed on a
+    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <link rel="manifest" href="/manifest.json">
+  <!--
+    Notice the use of  in the tags above.
+    It will be replaced with the URL of the `assets` folder during the build.
+    Only files inside the `assets` folder can be referenced from the HTML.
+
+    Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+    work correctly both with client-side routing and a non-root assets URL.
+    Learn how to configure a non-root assets URL by running `npm run build`.
+  -->
+  <link rel="stylesheet" href="old-style.css">
+  <title>PAWS Best Friend</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.016);">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation1" id="header">
+       <div class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters" style="justify-content: space-between;">
+          <h6 class="MuiTypography-root MuiTypography-h6">Paws Data Pipeline</h6>
+          <div style="display: flex; justify-content: space-between; margin: 1em;"><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button" aria-disabled="false" href="/upload"><span class="MuiButton-label">Admin</span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button" aria-disabled="false" href="/dataView"><span class="MuiButton-label">360 DataView</span><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" role="button" aria-disabled="false" href="/about"><span class="MuiButton-label">About</span><span class="MuiTouchRipple-root"></span></a></div>
+       </div>
+    </header>
+    <div class="MuiContainer-root MuiContainer-maxWidthLg">
+       <div class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded" style="display: flex; padding: 1em; margin: 1em 0px; justify-content: space-around;">
+          <form style="display: flex;">
+             <div class="MuiFormControl-root MuiTextField-root">
+                <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled" data-shrink="true" for="participant-search" id="participant-search-label">search name</label>
+                <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl">
+                   <input aria-invalid="false" id="participant-search" type="text" class="MuiInputBase-input MuiOutlinedInput-input" value="">
+                   <fieldset aria-hidden="true" class="PrivateNotchedOutline-root-9 MuiOutlinedInput-notchedOutline">
+                      <legend class="PrivateNotchedOutline-legendLabelled-11 PrivateNotchedOutline-legendNotched-12"><span>search name</span></legend>
+                   </fieldset>
+                </div>
+             </div>
+             <button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="submit">
+                <span class="MuiButton-label">
+                   <span class="MuiButtonBase-root MuiIconButton-root" tabindex="0" role="button" aria-disabled="false">
+                      <span class="MuiIconButton-label">
+                         <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                         </svg>
+                      </span>
+                      <span class="MuiTouchRipple-root"></span>
+                   </span>
+                </span>
+                <span class="MuiTouchRipple-root"></span>
+             </button>
+          </form>
+          <div class="MuiFormControl-root" style="min-width: 20em;">
+             <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled" data-shrink="true" id="paws-participant-label">Select Participant - Top 200 Results</label>
+             <div class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl">
+                <div class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input" tabindex="0" role="button" aria-haspopup="listbox" aria-labelledby="paws-participant-label paws-participant-select" id="paws-participant-select"></div>
+                <input aria-hidden="true" tabindex="-1" class="MuiSelect-nativeInput" value="0033900002SIdL0">
+                <svg class="MuiSvgIcon-root MuiSelect-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                   <path d="M7 10l5 5 5-5z"></path>
+                </svg>
+             </div>
+          </div>
+       </div>
+       <div class="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded" style="padding: 1em;">
+          <div class="MuiContainer-root MuiContainer-maxWidthLg">
+             <h4 class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-alignCenter">Contact Info</h4>
+             <div class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded" style="padding: 1em;">
+                <div style="display: flex; justify-content: space-between;">
+                   <p class="MuiTypography-root MuiTypography-body1"><span style="font-weight: 600;">Name:	</span><span>John Smith</span></p>
+                   <p class="MuiTypography-root WithStyles(ForwardRef(Typography))-root-15 MuiTypography-body1"><span style="font-weight: 600;">Phone:	</span><span>1234567890</span></p>
+                   <p class="MuiTypography-root MuiTypography-body1"><span style="font-weight: 600;">Email:	</span><span>fakeemail@mail.com</span></p>
+                </div>
+                <p class="MuiTypography-root MuiTypography-body1"><span style="font-weight: 600;">Address:	</span><span style="text-transform: uppercase;">1400 John F Kennedy Blvd</span></p>
+             </div>
+          </div>
+          <div class="MuiContainer-root MuiContainer-maxWidthLg" style="margin-top: 1em;">
+             <h4 class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-alignCenter">Financial Support Activity (Top 3)</h4>
+             <div class="MuiPaper-root MuiTableContainer-root MuiPaper-outlined MuiPaper-rounded" style="margin-top: 1em;">
+                <table class="MuiTable-root">
+                   <thead class="MuiTableHead-root">
+                      <tr class="MuiTableRow-root MuiTableRow-head">
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-16 MuiTableCell-alignCenter" scope="col">Date of Donation</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-16 MuiTableCell-alignCenter" scope="col">Amount</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-16 MuiTableCell-alignCenter" scope="col">Campaign Type</th>
+                      </tr>
+                   </thead>
+                   <tbody class="MuiTableBody-root">
+                      <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                         <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">2020-09-01</td>
+                         <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">$250.00</td>
+                         <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">-</td>
+                      </tr>
+                      <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                        <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">2020-08-01</td>
+                        <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">$250.00</td>
+                        <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">-</td>
+                     </tr>
+                     <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                      <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">2020-07-01</td>
+                      <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">$250.00</td>
+                      <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">-</td>
+                     </tr>
+                   </tbody>
+                </table>
+             </div>
+          </div>
+          <div class="MuiContainer-root MuiContainer-maxWidthLg" style="margin-top: 1em;">
+             <h4 class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-alignCenter">Adoption/Foster Records(Top 3)</h4>
+             <div class="MuiPaper-root MuiTableContainer-root MuiPaper-outlined MuiPaper-rounded" style="margin-top: 1em;">
+                <table class="MuiTable-root">
+                   <thead class="MuiTableHead-root">
+                      <tr class="MuiTableRow-root MuiTableRow-head">
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Name</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Type/Species</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Primary Breed</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Animal-Number</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Date of Adoption</th>
+                         <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-18 MuiTableCell-alignCenter" scope="col">Current Age</th>
+                      </tr>
+                   </thead>
+                   <tbody class="MuiTableBody-root">
+                    <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Whoof</td>
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Dog</td>
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Terrier, Pit Bull</td>
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">A12345678</td>
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">08/01/2018 2:22 PM</td>
+                       <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">6 to 10 years</td>
+                    </tr>
+                 </tbody>
+                </table>
+             </div>
+          </div>
+          <div>
+             <div class="MuiContainer-root MuiContainer-maxWidthLg" style="margin-top: 1em;">
+                <h4 class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-alignCenter">Volunteer Activity</h4>
+                <div class="MuiPaper-root MuiTableContainer-root MuiPaper-outlined MuiPaper-rounded" style="margin-top: 1em;">
+                   <table class="MuiTable-root">
+                      <thead class="MuiTableHead-root">
+                         <tr class="MuiTableRow-root MuiTableRow-head">
+                            <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-19 MuiTableCell-alignCenter" scope="col">Volunteer activity start</th>
+                            <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-19 MuiTableCell-alignCenter" scope="col">Life hours</th>
+                            <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-19 MuiTableCell-alignCenter" scope="col">YTD hours</th>
+                         </tr>
+                      </thead>
+                      <tbody class="MuiTableBody-root">
+                        <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">2018-07-01</td>
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">593</td>
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">8.5</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+             <div class="MuiContainer-root MuiContainer-maxWidthLg" style="margin-top: 1em;">
+                <h4 class="MuiTypography-root MuiTypography-h4 MuiTypography-gutterBottom MuiTypography-alignCenter">Volunteer History(Top 3)</h4>
+                <div class="MuiPaper-root MuiTableContainer-root MuiPaper-outlined MuiPaper-rounded" style="margin-top: 1em;">
+                   <table class="MuiTable-root">
+                      <thead class="MuiTableHead-root">
+                         <tr class="MuiTableRow-root MuiTableRow-head">
+                            <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-19 MuiTableCell-alignCenter" scope="col">Date</th>
+                            <th class="MuiTableCell-root MuiTableCell-head WithStyles(ForwardRef(TableCell))-head-19 MuiTableCell-alignCenter" scope="col">Assignment</th>
+                         </tr>
+                      </thead>
+                      <tbody class="MuiTableBody-root">
+                        <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Sun, 16 Jun 2019 00:00:00 GMT</td>
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">June 16th - 10:30am-2pm: Church of St. Alban June Fair</td>
+                         </tr>
+                         <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Sun, 23 Jun 2019 00:00:00 GMT</td>
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">June 23nd - 12:30-4: Summit Aid Fundraiser</td>
+                         </tr>
+                         <tr class="MuiTableRow-root WithStyles(ForwardRef(TableRow))-root-17">
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">Sun, 27 Oct 2019 00:00:00 GMT</td>
+                          <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter">13th Annual Mutt Strut - October 27, 2019</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div><!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled pipeline into the <body> tag.
+
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+<script src="/static/js/bundle.js"></script><script src="/static/js/0.chunk.js"></script><script src="/static/js/main.chunk.js"></script>
+
+</body></html>
